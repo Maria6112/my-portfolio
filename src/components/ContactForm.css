@@ -1,0 +1,96 @@
+.contact-form {
+  background: rgba(20, 20, 20, 0.8);
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 40px 20px;
+  color: white;
+  font-family: Poppins, sans-serif;
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+}
+
+.contact-form h2 {
+  margin-bottom: 30px;
+  font-size: 30px;
+  /* text-align: center; */
+  color: oklch(84.42% 0.19 202.24);
+  text-shadow: 1px 1px 2px black;
+}
+
+.contact-form label {
+  font-size: 0.9rem;
+  margin-top: 25px;
+  display: block;
+  color: white;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #777;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-bottom: 1px solid oklch(84.42% 0.19 202.24);
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form button {
+  margin-top: 30px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  color: black;
+  background: oklch(84.42% 0.19 202.24);
+  border: none;
+  border-radius: 0 0 20px 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: oklch(84.42% 0.19 202.24 / 0.8);
+}
+
+.form-status {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: oklch(84.42% 0.19 202.24);
+  text-align: center;
+}
+.animated-title {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: oklch(84.42% 0.19 202.24); /* твой синий */
+  margin-bottom: 40px;
+}
+
+.letter {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUpFade 0.8s ease-out forwards;
+}
+
+@keyframes slideUpFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
