@@ -87,6 +87,11 @@
   background-color: oklch(84.42% 0.19 202.24 / 0.8);
   transform: scale(1.05);
 }
+.download-resume-button span.cv-label {
+  display: none;
+  font-weight: 600;
+}
+
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;
@@ -94,11 +99,50 @@
   }
 
   .about-left {
-    padding-right: 0;
+    padding: 0;
     text-align: center;
   }
 
   .about-right {
     margin-top: 40px;
+  }
+
+  .animated-title-about {
+    font-size: 42px;
+    white-space: nowrap;
+  }
+
+  .subtitle {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .about-right img {
+    max-width: 280px;
+  }
+  /* .download-resume-button {
+    padding: 16px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  } */
+  a.hire {
+    padding: 16px;
+    font-size: 14px;
+    display: flex;
+  }
+  /* Удалить текст и оставить иконку с "CV" */
+  .download-resume-button span.text-label {
+    display: none;
+  }
+
+  .download-resume-button span.cv-label {
+    display: inline;
+    font-weight: 600;
   }
 }
