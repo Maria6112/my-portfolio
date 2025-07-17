@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
+import DownloadResumeButton from "./DownloadResumeButton";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState();
@@ -56,7 +57,8 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-right">
-          <button className="hire">Hire Me ➤</button>
+          {/* <button className="hire">Hire Me ➤</button> */}
+          <DownloadResumeButton />
         </div>
         <div className="">
           <ThemeToggle />

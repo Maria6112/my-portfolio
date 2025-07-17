@@ -1,3 +1,8 @@
+.background-projects {
+  width: 100%;
+  background-color: #2927278a;
+  /* padding-top: 40px; */
+}
 .projects-section {
   padding: 60px 20px;
   max-width: 1200px;
@@ -23,7 +28,7 @@
   border-radius: 12px;
   padding: 8px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   margin-bottom: 12px;
 }
 
@@ -58,8 +63,9 @@
   transition: transform 0.3s;
 }
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px oklch(84.42% 0.19 202.24);
+  transform: scale(1.05) translateY(-6px);
+  box-shadow: 0 16px 32px oklch(84.42% 0.19 202.24);
+  will-change: transform;
 }
 
 .project-card h3 {
@@ -163,6 +169,7 @@ body.light .project-card p {
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
+  overflow: visible;
 }
 .arrow {
   position: absolute;
@@ -195,8 +202,9 @@ body.light .project-card p {
   transform: scale(0.8);
   filter: blur(2px);
   pointer-events: none;
-  z-index: 1; /* 👈 обычные карточки ниже */
+  z-index: 1;
   /* padding: 0 12px; */
+  overflow: visible;
 }
 
 .slick-center {
@@ -204,7 +212,8 @@ body.light .project-card p {
   transform: scale(1) !important;
   filter: none !important;
   pointer-events: auto;
-  z-index: 2; /* 👈 центральная карточка поверх */
+  z-index: 2;
+  padding: 0px;
 }
 .slick-center .project-card {
   box-shadow: 0 0 20px oklch(84.42% 0.19 202.24);
@@ -212,6 +221,14 @@ body.light .project-card p {
 .slick-track {
   display: flex;
   align-items: stretch;
+  overflow: visible;
+  /* transform: translateX(-15px) !important; */
+}
+.slick-list {
+  height: 650px;
+  /* overflow: visible !important; */
+  padding: 35px 0 35px 10px !important;
+  /* margin-left: -10px; */
 }
 .icon-buttons {
   display: flex;

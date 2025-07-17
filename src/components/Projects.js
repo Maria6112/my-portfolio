@@ -83,12 +83,12 @@ const sliderSettings = {
   className: "center slick-custom",
   centerMode: true,
   infinite: true,
-  centerPadding: "60px",
+  centerPadding: "20px",
   slidesToShow: 3,
   speed: 500,
   arrows: true,
   autoplay: true,
-  autoplaySpeed: 3000,
+  autoplaySpeed: 4000,
   pauseOnHover: true,
   nextArrow: <SampleNextArrow />,
   prevArrow: <SamplePrevArrow />,
@@ -119,27 +119,29 @@ const sliderSettings = {
 
 const Projects = () => {
   return (
-    <section className="projects-section">
-      {/* <h2 className="projects-title">My Projects</h2> */}
-      <h2 className="animated-title">
-        {"My Projects".split("").map((char, i) => (
-          <span
-            key={i}
-            className="letter"
-            style={{ animationDelay: `${i * 0.05}s` }}
-          >
-            {char === " " ? "\u00A0" : char}
-          </span>
-        ))}
-      </h2>
-      <div className=" projects-carousel-container">
-        <Slider {...sliderSettings}>
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+    <div className="background-projects">
+      <section className="projects-section">
+        {/* <h2 className="projects-title">My Projects</h2> */}
+        <h2 className="animated-title">
+          {"My Projects".split("").map((char, i) => (
+            <span
+              key={i}
+              className="letter"
+              style={{ animationDelay: `${i * 0.05}s` }}
+            >
+              {char === " " ? "\u00A0" : char}
+            </span>
           ))}
-        </Slider>
-      </div>
-    </section>
+        </h2>
+        <div className=" projects-carousel-container">
+          <Slider {...sliderSettings}>
+            {projects.map((project, index) => (
+              <ProjectCard key={index} project={project} />
+            ))}
+          </Slider>
+        </div>
+      </section>
+    </div>
   );
 };
 

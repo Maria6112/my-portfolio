@@ -24,6 +24,8 @@ const ContactForm = () => {
         form,
         "Scuu1QvAY13jEqBtb"
       );
+      setForm({ name: "", email: "", message: "" });
+      setStatus("Message sent!");
     } catch (err) {
       setStatus("Error in sending");
     }

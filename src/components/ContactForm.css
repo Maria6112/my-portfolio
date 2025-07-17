@@ -46,12 +46,20 @@
 .contact-form textarea:focus {
   border-bottom: 1px solid oklch(84.42% 0.19 202.24);
 }
-
+.contact-form input:-webkit-autofill,
+.contact-form input:-webkit-autofill:hover,
+.contact-form input:-webkit-autofill:focus,
+.contact-form textarea:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
 .contact-form textarea {
   resize: none;
 }
 
 .contact-form button {
+  font-family: "Poppins", sans-serif;
   margin-top: 30px;
   padding: 12px 24px;
   font-size: 1rem;
@@ -72,6 +80,7 @@
   font-size: 0.9rem;
   color: oklch(84.42% 0.19 202.24);
   text-align: center;
+  animation: fadeIn 0.3s ease-in;
 }
 .animated-title {
   display: flex;
@@ -82,10 +91,24 @@
   margin-bottom: 40px;
 }
 
-.letter {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideUpFade 0.8s ease-out forwards;
+.letter span {
+  font-weight: bold;
+  font-size: 1.8rem;
+  /* color: white; */
+  position: relative;
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    oklch(84.42% 0.19 202.24),
+    white,
+    oklch(84.42% 0.19 202.24)
+  );
+  background-size: 200% auto;
+  background-position: left center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: background-position 0.6s ease;
 }
 
 @keyframes slideUpFade {
