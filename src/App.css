@@ -9,6 +9,18 @@
 
   pointer-events: none;
 }
+body {
+  background: url("../public/images/background-dark.jpg") no-repeat center
+    center fixed;
+  background-size: cover;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  transition: background-color 0.3s ease;
+}
+:root.dark body {
+  background-color: #0d0d0d;
+  color: white;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

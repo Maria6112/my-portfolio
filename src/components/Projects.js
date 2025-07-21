@@ -90,6 +90,7 @@ const sliderSettings = {
   autoplay: true,
   autoplaySpeed: 4000,
   pauseOnHover: true,
+  dots: true,
   nextArrow: <SampleNextArrow />,
   prevArrow: <SamplePrevArrow />,
   responsive: [
@@ -98,6 +99,7 @@ const sliderSettings = {
       settings: {
         slidesToShow: 2,
         centerPadding: "40px",
+        dots: true,
       },
     },
     {
@@ -105,6 +107,7 @@ const sliderSettings = {
       settings: {
         slidesToShow: 1,
         centerPadding: "30px",
+        dots: true,
       },
     },
     {
@@ -112,6 +115,7 @@ const sliderSettings = {
       settings: {
         slidesToShow: 1,
         centerPadding: "20px",
+        dots: true,
       },
     },
   ],
@@ -133,12 +137,14 @@ const Projects = () => {
             </span>
           ))}
         </h2>
-        <div className=" projects-carousel-container">
-          <Slider {...sliderSettings}>
-            {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
-            ))}
-          </Slider>
+        <div className="slider-wrapper">
+          <div className=" projects-carousel-container">
+            <Slider {...sliderSettings}>
+              {projects.map((project, index) => (
+                <ProjectCard key={index} project={project} />
+              ))}
+            </Slider>
+          </div>
         </div>
       </section>
     </div>

@@ -70,38 +70,6 @@ a {
   width: 100%;
 }
 
-/* button.hire {
-  font-family: "Poppins", sans-serif;
-  position: relative;
-  overflow: hidden;
-  background-color: oklch(84.42% 0.19 202.24);
-  color: black;
-  border: none;
-  border-radius: 0 0 20px 0;
-  font-size: 17px;
-  padding: 10px 15px;
-  cursor: pointer;
-  box-shadow: 10px rgba(239, 241, 242, 0.1);
-  transition: color 0.3s ease;
-}
-
-button.hire::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -75%;
-  width: 50%;
-  height: 200%;
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.6) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: skewX(-25deg);
-  animation: shine 2.5s infinite;
-  pointer-events: none;
-} */
 .hire img {
   height: 24px;
   width: 24px;
@@ -153,11 +121,6 @@ a.hire:hover {
   }
 }
 
-button.hire:hover {
-  transform: scale(1.05);
-  background-color: #09c9efb3;
-}
-
 .navbar-center {
   display: flex;
   gap: 30px;
@@ -186,7 +149,7 @@ button.hire:hover {
   background-color: oklch(84.42% 0.19 202.24);
   border-radius: 2px;
 }
-/* ✅ Стили для burger */
+
 .burger {
   display: none;
   flex-direction: column;
@@ -215,7 +178,6 @@ button.hire:hover {
   transform: rotate(-45deg) translateY(-7px);
 }
 
-/* ✅ Мобильная адаптация */
 @media (max-width: 768px) {
   .burger {
     display: flex;

@@ -1,0 +1,46 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #0f0f0f77;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-buttons a {
+  color: white;
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+.icon-buttons a:hover {
+  color: oklch(84.42% 0.19 202.24);
+}
+
+.icon {
+  font-size: 24px;
+}
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+  }
+
+  .footer-right {
+    order: 1; /* правая часть будет первой */
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .footer-left {
+    order: 2;
+    text-align: center;
+  }
+}

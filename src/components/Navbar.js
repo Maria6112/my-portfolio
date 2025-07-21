@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className="navbar">
         <div className="navbar-left">
           <NavLink to="/" className="logo">
-            {"{ maria-fomin }"}
+            {"{maria-fomin}"}
           </NavLink>
         </div>
 
