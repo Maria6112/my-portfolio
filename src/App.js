@@ -7,12 +7,15 @@ import Footer from "./components/Footer";
 import Projects from "./components/Projects";
 import ContactPage from "./pages/ContactPage";
 import AboutMe from "./pages/AboutMe";
+// import PageWrapper from "./components/PageWrapper";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (
     <Router>
+      {/* <PageWrapper> */}
       <Navbar />
       <Routes>
         <Route path="/" element={<AboutMe />} />
@@ -20,6 +23,7 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <Footer />
+      {/* </PageWrapper> */}
     </Router>
   );
 }

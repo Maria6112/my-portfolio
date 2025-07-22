@@ -1,5 +1,5 @@
 .navbar {
-  background-color: rgba(27, 26, 26, 0.7);
+  background-color: #0f0f0f77;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -177,6 +177,35 @@ a.hire:hover {
 .line.open:nth-child(3) {
   transform: rotate(-45deg) translateY(-7px);
 }
+/* 🌙 DARK THEME */
+html.dark .navbar {
+  background-color: rgba(27, 26, 26, 0.7);
+  color: white;
+}
+
+html.dark .nav-link:hover {
+  color: oklch(84.42% 0.19 202.24);
+}
+
+/* ☀️ LIGHT THEME */
+html.light .navbar {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #222;
+  backdrop-filter: blur(6px);
+}
+
+html.light .nav-link,
+html.light .logo {
+  color: #222;
+}
+
+html.light .nav-link:hover {
+  color: oklch(60% 0.2 250); /* Adjust hover color for light theme */
+}
+
+html.light .line {
+  background-color: #222;
+}
 
 @media (max-width: 768px) {
   .burger {
@@ -198,6 +227,9 @@ a.hire:hover {
   .navbar-center.open {
     max-height: 300px;
     padding: 20px 0;
+  }
+  html.light .navbar-center.open {
+    background-color: rgba(255, 255, 255, 0.85);
   }
 
   .navbar-right {

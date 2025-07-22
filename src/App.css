@@ -3,12 +3,11 @@
 }
 
 .App-logo {
-  /* height: 40vmin; */
   justify-content: left;
   align-items: left;
-
   pointer-events: none;
 }
+
 body {
   background: url("../public/images/background-dark.jpg") no-repeat center
     center fixed;
@@ -17,14 +16,28 @@ body {
   font-family: "Poppins", sans-serif;
   transition: background-color 0.3s ease;
 }
-:root.dark body {
-  background-color: #0d0d0d;
+
+body {
+  font-family: "Poppins", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🌙 Тёмная тема */
+.dark body {
+  background: url("../public/images/background-dark.jpg") no-repeat center
+    center fixed;
+  background-size: cover;
   color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-  }
+/* ☀️ Светлая тема */
+.light body {
+  background: url("../public/images/background-light.jpg") no-repeat center
+    center fixed;
+  background-size: cover;
+  color: black important!;
 }
 
 .App-link {

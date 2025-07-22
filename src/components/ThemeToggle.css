@@ -13,13 +13,13 @@
   transform: scale(1.1);
 }
 
-.icon {
+.theme-icon {
   width: 24px;
   height: 24px;
   color: white;
 }
 
 /* Светлая тема */
-body.light .icon {
-  color: black;
+html.light .theme-icon {
+  color: #222;
 }

@@ -110,10 +110,59 @@
   color: transparent;
   transition: background-position 0.6s ease;
 }
+:root.light .contact-form {
+  background: rgba(255, 255, 255, 0.85);
+  color: #111;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+:root.light .contact-form label,
+:root.light .contact-form input,
+:root.light .contact-form textarea {
+  color: #111;
+  border-bottom: 1px solid #333;
+}
+
+:root.light .contact-form input::placeholder,
+:root.light .contact-form textarea::placeholder {
+  color: #666;
+}
+
+:root.light .contact-form input:focus,
+:root.light .contact-form textarea:focus {
+  border-bottom: 1px solid oklch(84.42% 0.19 202.24);
+}
+
+:root.light .contact-form button {
+  color: black;
+  background: oklch(84.42% 0.19 202.24);
+}
+
+:root.light .form-status {
+  color: oklch(84.42% 0.19 202.24);
+}
 
 @keyframes slideUpFade {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@media screen and (max-width: 600px) {
+  .contact-form {
+    margin: 20px 10px;
+    padding: 30px 15px;
+  }
+
+  .animated-title {
+    font-size: 2rem;
+  }
+
+  .letter span {
+    font-size: 1.4rem;
+  }
+
+  .contact-form button {
+    width: 100%;
   }
 }

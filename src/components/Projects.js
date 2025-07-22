@@ -20,8 +20,9 @@ const projects = [
     title: "Best-Rent",
     link: "https://best-rent-app.onrender.com",
     github: "https://github.com/Maria6112/best-rent-app",
-    description: "Apartments rent website. Booking and calendar support.",
-    tech: ["React", "MongoDB", "Node.js", "Express"],
+    description:
+      "A rental management web application for apartment listings with booking calendar support. Users can browse available listings, view details, and reserve dates. The app connects to a backend (Node.js + Express + MongoDB) to store and manage rental data.",
+    tech: ["React", "MongoDB", "Node.js", "Express", "CSS"],
   },
   {
     image: "/images/marvel-example.png",
@@ -29,16 +30,17 @@ const projects = [
     link: "https://marvel-react-app.onrender.com/",
     github: "https://github.com/Maria6112/marvel-react-app",
     description:
-      "Search and explore Marvel characters via API. Pagination, lazy loading, and clean design.",
-    tech: ["React", "Marvel API", "Hooks"],
+      "A dynamic Marvel character explorer allowing users to search, filter, and view details of comic book heroes via the Marvel API. Implements lazy loading for performance and pagination for large datasets. Provides a smooth user experience with interactive search capabilities.",
+    tech: ["React", "Marvel API", "CSS"],
   },
   {
     image: "/images/flixx-example.png",
     title: "FLIXX - Movies & TV Shows",
     link: "https://lucky-pudding-66d0a7.netlify.app/",
     github: "https://github.com/Maria6112/flix-app",
-    description: ".",
-    tech: ["JavaScript"],
+    description:
+      "A front-end application showcasing movies and TV shows dynamically using a public movie API (e.g., TMDB). Offers browsing by genre, viewing summaries and ratings. Includes stateful navigation and clean UI for enhanced user experience.",
+    tech: ["JavaScript", "Fetch API", "CSS", "Netlify"],
   },
   {
     image: "/images/tracalorie-example.png",
@@ -46,8 +48,8 @@ const projects = [
     link: "https://starlit-clafoutis-541894.netlify.app/",
     github: "https://github.com/Maria6112/tracalorie-app",
     description:
-      "Currency-based calculator with manual override and API fallback.",
-    tech: ["JavaScript", "HTML", "CSS"],
+      "A simple yet functional calorie or currency calculator application. Provides real-time input with manual override and automatic updates. Great starter project with neat UI and core logic.",
+    tech: ["JavaScript", "API fetch", "HTML", "CSS"],
   },
   {
     image: "/images/food-project-example.png",
@@ -55,7 +57,7 @@ const projects = [
     link: "https://inquisitive-croquembouche-264ea5.netlify.app",
     github: "https://github.com/Maria6112/food_project",
     description:
-      "Currency-based calculator with manual override and API fallback.",
+      "A web application powered by the Fetch API that showcases recipes, meal ideas, or food categories. Users can search or browse dishes with pictures and details. Demonstrates integration of external data and dynamic rendering.",
     tech: ["JavaScript", "HTML", "CSS", "Fetch API"],
   },
 ];

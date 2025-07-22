@@ -3,8 +3,18 @@
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
-  background-color: #292727aa;
+  /* background-color: #f7f5f54a; */
   padding: 80px;
+  color: white;
+}
+/* .about-container.light {
+  background-color: #2927278a;
+  color: #000;
+  color: white;
+} */
+
+.about-container.dark {
+  background-color: #2a2929b6;
   color: white;
 }
 
@@ -91,6 +101,55 @@
   display: none;
   font-weight: 600;
 }
+.skills {
+  margin-top: 30px;
+}
+
+.skills h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+.skills li {
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.228);
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+/* ☀️ LIGHT THEME STYLES */
+html.light .about-container {
+  background-color: #f4f4f4b3; /* soft light background */
+  color: #1a1a1a; /* dark text */
+}
+
+html.light .animated-title-about,
+html.light .subtitle,
+html.light .skills h3 {
+  color: #222;
+}
+
+html.light .skills li {
+  background-color: rgba(255, 250, 250, 0.557);
+  color: #222;
+}
+
+html.light .download-resume-button {
+  background-color: oklch(84.42% 0.19 202.24);
+  color: black;
+}
+
+html.light .download-resume-button:hover {
+  background-color: oklch(84.42% 0.19 202.24 / 0.8);
+}
 
 @media (max-width: 768px) {
   .about-container {
@@ -123,19 +182,16 @@
   .about-right img {
     max-width: 280px;
   }
-  /* .download-resume-button a {
-    padding: 16px;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  } */
+
   a.hire {
     padding: 10px;
     font-size: 14px;
     display: flex;
     margin: 10px;
+  }
+  a.hire-about {
+    display: block;
+    /* width: 200px; */
   }
   /* Удалить текст и оставить иконку с "CV" */
   .download-resume-button span.text-label {
@@ -145,5 +201,19 @@
   .download-resume-button span.cv-label {
     display: inline;
     font-weight: 600;
+  }
+
+  .skills ul {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .skills li {
+    font-size: 15px;
+    padding: 5px 10px;
+  }
+
+  .skills h3 {
+    font-size: 20px;
   }
 }
