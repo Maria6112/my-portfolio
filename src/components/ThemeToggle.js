@@ -4,7 +4,10 @@ import "./ThemeToggle.css";
 
 const ThemeToggle = () => {
   const [dark, setDark] = useState(() => {
-    return localStorage.getItem("theme") === "dark";
+    const stored = localStorage.getItem("theme");
+    if (stored) return stored === "dark";
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
   });
 
   useEffect(() => {
