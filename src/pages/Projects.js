@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectCard from "./ProjectCard";
+import ProjectCard from "../components/ProjectCard";
 import Slider from "react-slick";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 

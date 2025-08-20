@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import "./ContactForm.css";
 
 const ContactForm = () => {
@@ -10,26 +12,62 @@ const ContactForm = () => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const handlePhoneChange = (phone) => {
+    console.log("Phone changed:", phone, "Length:", phone.length);
+
+    setForm((prev) => ({ ...prev, phone }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!form.name || !form.email || !form.message) {
-      setStatus("Please fill out all fields");
-      return;
-    }
+    const fullMessage = `
+📨 New Message from Portfolio:
+Name: ${form.name}
+Phone: ${form.phone || ""}
+Email: ${form.email}
+Message: ${form.message}
+    `;
+
     try {
-      await emailjs.send(
-        "service_4qbsue1",
-        "template_mje15rp",
-        form,
-        "Scuu1QvAY13jEqBtb"
+      await fetch(
+        "https://hook.eu2.make.com/whtv5yyjpf33zncp0t2ibhjmi5blrlyl",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            source: "portfolio",
+            text: fullMessage,
+          }),
+        }
       );
-      setForm({ name: "", email: "", message: "" });
+      console.log(form);
+      setForm({ name: "", email: "", phone: "", message: "" });
       setStatus("Message sent!");
     } catch (err) {
       setStatus("Error in sending");
     }
   };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   if (!form.name || !form.email || !form.message) {
+  //     setStatus("Please fill out all fields");
+  //     return;
+  //   }
+  //   try {
+  //     await emailjs.send(
+  //       "service_4qbsue1",
+  //       "template_mje15rp",
+  //       form,
+  //       "Scuu1QvAY13jEqBtb"
+  //     );
+  //     setForm({ name: "", email: "", message: "" });
+  //     setStatus("Message sent!");
+  //   } catch (err) {
+  //     setStatus("Error in sending");
+  //   }
+  // };
 
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
@@ -45,7 +83,7 @@ const ContactForm = () => {
           </span>
         ))}
       </h2>
-      <label>Name</label>
+      <label>Name *</label>
       <input
         type="text"
         name="name"
@@ -54,8 +92,21 @@ const ContactForm = () => {
         placeholder="Your name"
         required
       />
+      <label>Phone (optional) </label>
+      <PhoneInput
+        country={"il"}
+        value={form.phone}
+        onChange={handlePhoneChange}
+        enableSearch={true}
+        inputStyle={{ width: "100%" }}
+        inputProps={{
+          name: "phone",
+          required: false,
+          autoFocus: false,
+        }}
+      />
 
-      <label>Email</label>
+      <label>Email *</label>
       <input
         type="email"
         name="email"
@@ -65,7 +116,7 @@ const ContactForm = () => {
         required
       />
 
-      <label>Message</label>
+      <label>Message *</label>
       <textarea
         name="message"
         value={form.message}

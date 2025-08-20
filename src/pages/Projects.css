@@ -182,7 +182,7 @@ html.light .icon:hover {
   position: relative;
   overflow: visible;
 }
-.arrow {
+/* .arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -194,7 +194,7 @@ html.light .icon:hover {
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 20px;
-}
+} */
 
 .arrow:hover {
   background-color: rgba(255, 255, 255, 0.3);
