@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Projects from "./pages/Projects";
 import ContactPage from "./pages/ContactPage";
 import AboutMe from "./pages/AboutMe";
+import ContactButtons from "./components/ContactButtons";
 // import PageWrapper from "./components/PageWrapper";
 
 import "slick-carousel/slick/slick.css";
@@ -24,6 +25,7 @@ function App() {
       </Routes>
       <Footer />
       {/* </PageWrapper> */}
+      <ContactButtons />
     </Router>
   );
 }

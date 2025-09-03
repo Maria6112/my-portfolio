@@ -36,7 +36,7 @@ Message: ${form.message}
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            source: "portfolio",
+            // source: "portfolio",
             text: fullMessage,
           }),
         }

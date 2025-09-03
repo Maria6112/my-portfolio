@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bona+Nova+SC&family=Bellefair&family=Gruppo&family=Libertinus+Sans:ital,wght@0,400;0,700&display=swap");
+
 .contact-form {
   background: rgba(20, 20, 20, 0.8);
   max-width: 600px;
@@ -28,7 +30,6 @@
 .react-tel-input .form-control {
   width: 100%;
   padding: 10px 0;
-
   background: transparent;
   border: none;
   border-bottom: 1px solid currentColor;
@@ -44,6 +45,8 @@
 .contact-form textarea::placeholder,
 .react-tel-input .form-control::placeholder {
   color: #777;
+  font-family: "Bellefair", serif;
+  font-size: 18px;
 }
 
 .contact-form input:focus,
