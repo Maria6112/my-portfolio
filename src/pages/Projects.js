@@ -16,6 +16,15 @@ const projects = [
     tech: ["React", "EmailJS", "Vercel", "Analytics", "CSS"],
   },
   {
+    image: "/images/noa-portfolio-example.png",
+    title: "Noa Stefanian – Wedding Films Portfolio",
+    link: "https://noa-portfolio-three.vercel.app/",
+    github: "https://github.com/Maria6112/noa-portfolio",
+    description:
+      " A modern, multilingual portfolio website for a professional wedding video editor. The app highlights Noa’s work with an elegant design, smooth animations, and a fully responsive layout.",
+    tech: ["React", "CSS", "i18next", "Chatbot integration"],
+  },
+  {
     image: "/images/best-rent-example.png",
     title: "Best-Rent",
     link: "https://best-rent-app.onrender.com",
@@ -59,15 +68,6 @@ const projects = [
     description:
       "A web application powered by the Fetch API that showcases recipes, meal ideas, or food categories. Users can search or browse dishes with pictures and details. Demonstrates integration of external data and dynamic rendering.",
     tech: ["JavaScript", "HTML", "CSS", "Fetch API"],
-  },
-  {
-    image: "/images/noa-portfolio-example.png",
-    title: "Noa Stefanian – Wedding Films Portfolio",
-    link: "https://noa-portfolio-three.vercel.app/",
-    github: "https://github.com/Maria6112/noa-portfolio",
-    description:
-      " A modern, multilingual portfolio website for a professional wedding video editor. The app highlights Noa’s work with an elegant design, smooth animations, and a fully responsive layout.",
-    tech: ["React", "CSS", "i18next", "Chatbot integration"],
   },
 ];
 const SampleNextArrow = ({ className, style, onClick }) => (
