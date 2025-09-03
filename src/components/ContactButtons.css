@@ -35,10 +35,11 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
   opacity: 0.95;
 }
+
 /* WhatsApp: зелёный круг, белая иконка */
 .contact-btn.whatsapp {
   background-color: #25d366;
-  color: white;
+  color: white !important;
   font-size: 30px;
 
   padding: 4px;
@@ -47,7 +48,7 @@
 /* Telegram: белая обводка + синий круг внутри */
 .contact-btn.telegram {
   background-color: #0088cc;
-  color: white;
+  color: white !important;
   border: 3px solid white;
 }
 
