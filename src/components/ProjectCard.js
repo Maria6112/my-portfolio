@@ -1,48 +1,40 @@
 import React from "react";
-import "./../pages/Projects.css";
+import { motion } from "framer-motion";
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="project-card">
-      <div className="project-frame">
-        <div className="frame-buttons">
-          <span className="red" />
-          <span className="yellow" />
-          <span className="green" />
-        </div>
-        <img src={project.image} alt={project.title} />
-        {/* <iframe
-          src={project.link}
-          title={project.title}
-          className="project-preview"
-          frameBorder="0"
-          loading="lazy"
-          scrolling="no"
-        ></iframe> */}
+    <motion.div
+      className="project-card-new"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7 }}
+    >
+      <div className="project-image-wrapper">
+        <a href={project.link} target="_blank" rel="noreferrer">
+          <img src={project.image} alt={project.title} />
+        </a>
       </div>
 
-      <h3>{project.title}</h3>
-      <p>{project.description}</p>
-      <div className="project-tech">
-        {project.tech.map((tech, i) => {
-          return <span key={i}>{tech}</span>;
-        })}
-      </div>
-      <div className="icon-buttons">
-        <div className="visit-label">
-          <p>Visit:</p>
-        </div>
-        <div className="icon-links">
-          <a href={project.link} target="_blank" rel="noreferrer">
-            <img src="/images/globe-white.png" alt="Website" className="icon" />
+      <div className="project-info-bottom">
+        <h3 className="project-main-name">{project.title}</h3>
+        <p className="project-desc-simple">{project.description}</p>
+        <div className="project-tech">
+          {project.tech.map((tech, i) => {
+            return <span key={i}>{tech}</span>;
+          })}
+        </div>{" "}
+        <div className="project-links-minimal center">
+          <a href={project.link} className="link-btn">
+            Live View →
           </a>
-
-          <a href={project.github} target="_blank" rel="noreferrer">
-            <img src="/images/github-white.png" alt="GitHub" className="icon" />
+          <a href={project.github} className="link-btn">
+            GitHub ↗
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
+
 export default ProjectCard;

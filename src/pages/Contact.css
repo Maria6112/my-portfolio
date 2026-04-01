@@ -1,0 +1,81 @@
+.contact-page-wrapper {
+  background-color: #1a1a1a;
+  /* min-height: 100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 5%;
+}
+
+.contact-container-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Ровно пополам */
+  gap: 100px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.contact-right-info {
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+.contact-main-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: -2px;
+}
+
+.contact-title-line {
+  width: 80px;
+  height: 2px;
+  background-color: white;
+  margin-bottom: 40px;
+}
+
+.contact-description {
+  color: #aaa;
+  line-height: 1.6;
+  margin-bottom: 50px;
+  max-width: 450px;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.method-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.method-item .icon {
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #444;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.method-item p {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Адаптивность для мобилок */
+@media (max-width: 900px) {
+  .contact-container-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .contact-right-info {
+    order: -1; /* На мобилках текст будет сверху */
+  }
+}

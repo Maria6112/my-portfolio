@@ -1,54 +1,11 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap");
 
-.App-logo {
-  justify-content: left;
-  align-items: left;
-  pointer-events: none;
-}
-
-body {
-  background: url("../public/images/background-dark.jpg") no-repeat center
-    center fixed;
-  background-size: cover;
+html,
+body,
+#root {
+  font-family: "Inter", sans-serif;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #1a1a1a;
   color: white;
-  font-family: "Poppins", sans-serif;
-  transition: background-color 0.3s ease;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  margin: 0;
-  padding: 0;
-}
-
-/* 🌙 Тёмная тема */
-.dark body {
-  background: url("../public/images/background-dark.jpg") no-repeat center
-    center fixed;
-  background-size: cover;
-  color: white;
-}
-
-/* ☀️ Светлая тема */
-.light body {
-  background: url("../public/images/background-light.jpg") no-repeat center
-    center fixed;
-  background-size: cover;
-  color: black important!;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

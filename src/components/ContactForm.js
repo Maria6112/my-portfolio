@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-// import emailjs from "@emailjs/browser";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
 import "./ContactForm.css";
 
 const ContactForm = () => {
@@ -9,24 +6,21 @@ const ContactForm = () => {
   const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handlePhoneChange = (phone) => {
-    console.log("Phone changed:", phone, "Length:", phone.length);
-
-    setForm((prev) => ({ ...prev, phone }));
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!form.message.trim() || !form.name.trim()) return;
+    setStatus("Sending...");
+    const btn = e.target.querySelector("button");
+    btn.disabled = true;
 
     const fullMessage = `
-📨 New Message from Portfolio:
-Name: ${form.name}
-Phone: ${form.phone || ""}
-Email: ${form.email}
-Message: ${form.message}
+ **New Message from Portfolio!**
+👤 Name: ${form.name}
+📧 Email: ${form.email}
+💬 Message: ${form.message}
     `;
 
     try {
@@ -35,101 +29,66 @@ Message: ${form.message}
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            // source: "portfolio",
-            text: fullMessage,
-          }),
-        }
+          body: JSON.stringify({ text: fullMessage }),
+        },
       );
       console.log(form);
-      setForm({ name: "", email: "", phone: "", message: "" });
-      setStatus("Message sent!");
+
+      setStatus("Sent successfully.");
+      setForm({ name: "", email: "", message: "" });
     } catch (err) {
-      setStatus("Error in sending");
+      setStatus("Error. Try again.");
+      e.target.querySelector("button").disabled = false;
+    } finally {
+      btn.disabled = false;
     }
   };
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   if (!form.name || !form.email || !form.message) {
-  //     setStatus("Please fill out all fields");
-  //     return;
-  //   }
-  //   try {
-  //     await emailjs.send(
-  //       "service_4qbsue1",
-  //       "template_mje15rp",
-  //       form,
-  //       "Scuu1QvAY13jEqBtb"
-  //     );
-  //     setForm({ name: "", email: "", message: "" });
-  //     setStatus("Message sent!");
-  //   } catch (err) {
-  //     setStatus("Error in sending");
-  //   }
-  // };
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit}>
-      {/* <h2 className="fade-in-title">Say Hello</h2> */}
-      <h2 className="animated-title">
-        {"Say Hello".split("").map((char, i) => (
-          <span
-            key={i}
-            className="letter"
-            style={{ animationDelay: `${i * 0.05}s` }}
-          >
-            {char === " " ? "\u00A0" : char}
-          </span>
-        ))}
-      </h2>
-      <label>Name *</label>
-      <input
-        type="text"
-        name="name"
-        value={form.name}
-        onChange={handleChange}
-        placeholder="Your name"
-        required
-      />
-      <label>Phone (optional) </label>
-      <PhoneInput
-        country={"il"}
-        value={form.phone}
-        onChange={handlePhoneChange}
-        enableSearch={true}
-        inputStyle={{ width: "100%" }}
-        inputProps={{
-          name: "phone",
-          required: false,
-          autoFocus: false,
-        }}
-      />
+    <div className="minimal-contact-wrapper">
+      {/* <h2 className="say-hello">Say hello.</h2> */}
 
-      <label>Email *</label>
-      <input
-        type="email"
-        name="email"
-        value={form.email}
-        onChange={handleChange}
-        placeholder="Your email"
-        required
-      />
+      <form onSubmit={handleSubmit} className="minimal-form">
+        <div className="input-group">
+          <input
+            type="text"
+            name="name"
+            placeholder="My name is..."
+            value={form.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
 
-      <label>Message *</label>
-      <textarea
-        name="message"
-        value={form.message}
-        onChange={handleChange}
-        placeholder="How can I help you?"
-        rows="5"
-        required
-      />
+        <div className="input-group">
+          <input
+            type="email"
+            name="email"
+            placeholder="My email is..."
+            value={form.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
 
-      <button type="submit">Send Message ➤</button>
+        <div className="input-group">
+          <textarea
+            name="message"
+            placeholder="I'd like to talk about..."
+            value={form.message}
+            onChange={handleChange}
+            rows="1"
+            required
+          />
+        </div>
 
-      {status && <p className="form-status">{status}</p>}
-    </form>
+        <button type="submit" className="submit-minimal">
+          Send message <span>→</span>
+        </button>
+
+        {status && <p className="status-msg">{status}</p>}
+      </form>
+    </div>
   );
 };
 

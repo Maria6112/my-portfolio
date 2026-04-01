@@ -1,414 +1,166 @@
+/* Подключаем шрифт ко всей секции */
 .background-projects {
   width: 100%;
-  background-color: #2927278a;
-  /* padding-top: 40px; */
+  background-color: #1a1a1a;
+  color: white;
+  padding-bottom: 100px;
+  font-family: "Inter", sans-serif; /* Тот самый шрифт */
 }
+
 .projects-section {
-  padding: 60px 20px;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
+  padding: 100px 20px;
+}
+
+/* Центрируем заголовок и полоску */
+.projects-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрирует по горизонтали */
+  text-align: center;
+  margin-bottom: 80px;
 }
 
 .projects-title {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  color: oklch(84.42% 0.19 202.24);
-  text-align: center;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+  font-family: "Inter", sans-serif;
+  /* font-size: clamp(2.5rem, 5vw, 4rem); */
+  font-size: 60px;
+  font-weight: bold; /* Самый жирный для заголовка */
+  /* text-transform: uppercase; */
+  letter-spacing: -3px;
+  margin-bottom: 15px;
+  color: #ffffff;
 }
 
-.project-frame {
-  background-color: #222;
-  border-radius: 12px;
-  padding: 8px;
-  position: relative;
-  overflow: visible;
-  margin-bottom: 12px;
+/* Полоска строго под заголовком */
+.header-line {
+  width: 60px;
+  height: 2px;
+  background-color: white;
 }
 
-.project-frame img {
+/* Сетка по 2 в ряд */
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px 60px;
   width: 100%;
-  height: 200px;
+}
+
+/* Карточка */
+.project-card-new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.project-image-wrapper {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 16 / 8;
+  overflow: hidden;
+  background-color: #222;
+  margin-bottom: 25px;
+  /* border-radius: 4px; */
+}
+
+.project-image-wrapper img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 8px;
-  background: #000;
-  image-rendering: auto; /* исправляет пиксели */
-  filter: brightness(95%);
+  filter: grayscale(100%);
+  object-position: top;
+  transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-.project-card {
-  width: 90%;
-  max-width: 400px;
-  background-color: #111;
-  border-radius: 16px;
-  padding: 24px;
+.project-card-new:hover .project-image-wrapper img {
+  filter: grayscale(0%);
+  transform: scale(1.03);
+}
+
+/* Описание проекта */
+.project-main-name {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.project-desc-simple {
+  font-weight: 300; /* Тонкий шрифт для описания */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #bbbbbb;
+  max-width: 380px;
+  margin-bottom: 20px;
+}
+.project-links-minimal.center {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Расстояние МЕЖДУ кнопками */
+  margin-top: 15px; /* Отступ ОТ текста описания */
+}
+.link-btn {
   color: white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  margin: 0 auto;
-  transition: transform 0.3s;
-}
-.project-card:hover {
-  transform: scale(1.05) translateY(-6px);
-  box-shadow: 0 16px 32px oklch(84.42% 0.19 202.24);
-  will-change: transform;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+
+  /* Чтобы ссылка вела себя как кнопка и имела область клика */
+  display: inline-block;
 }
 
-.project-card h3 {
-  font-size: 1.2rem;
-  color: oklch(84.42% 0.19 202.24);
-  margin-bottom: 10px;
-}
-
-.project-card p {
-  color: #cccccc;
-  flex-grow: 1;
+.link-btn:hover {
+  border-bottom: 1px solid white;
+  opacity: 0.7;
 }
 
 .project-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin: 12px 0;
+  gap: 10px;
+  margin-top: 15px;
 }
 
 .project-tech span {
-  background-color: rgba(8, 7, 8, 0.5);
-  color: white;
-  padding: 4px 10px;
-  border-radius: 12px;
+  font-family: "Open Sans", sans-serif;
   font-size: 0.75rem;
-}
-.project-tech span:hover {
-  transform: scale(1.05);
-}
-
-.project-links {
-  display: flex;
-  gap: 12px;
-  margin-top: 10px;
-}
-
-.project-links a {
-  color: #ff66cc;
-  text-decoration: underline;
-  font-size: 0.85rem;
-}
-
-/* Светлая тема */
-html.light .background-projects {
-  background-color: #f1f1f1a4;
-}
-
-html.light .project-card {
-  background-color: #f4f4f4;
-  color: #111;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.32);
-}
-html.light .project-card p {
-  color: #444444;
-}
-html.light .project-card h3 {
-  color: #333333;
-}
-html.light .animated-title {
-  color: #333333;
-}
-html.light .project-tech span {
-  background-color: #e0e0e0;
-  color: #333333;
-}
-
-html.light .project-frame {
-  background-color: #3a3a3b9c;
-  color: #4b0082;
-}
-
-html.light .icon:not(.contact-btn .icon) {
-  filter: grayscale(100%) brightness(0.4);
-}
-
-html.light .icon:hover {
-  filter: drop-shadow(0 0 5px rgba(84, 108, 255, 0.6));
-}
-
-.frame-buttons {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 8px;
-}
-
-.frame-buttons span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.frame-buttons .red {
-  background: #ff56f4;
-}
-.frame-buttons .yellow {
-  background: #ffbd2e;
-}
-.frame-buttons .green {
-  background: #06f4f4;
-}
-
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-.buttons a {
-  background: rgba(84, 108, 255, 0.1); /* rgba от твоего цвета */
-  color: rgba(84, 108, 255, 1);
-  padding: 8px 16px;
-  border-radius: 8px;
   font-weight: 600;
-  text-decoration: none;
-  transition: background 0.3s;
-}
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 
-.buttons a:hover {
-  background: rgba(84, 108, 255, 0.3);
-}
+  color: #ffffff;
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
 
-.projects-carousel-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  /* padding: 0 20px; */
-  padding-bottom: 40px;
-  position: relative;
-  overflow: visible;
-}
-/* .arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
-  padding: 12px;
-  border-radius: 50%;
-  cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 20px;
-} */
-
-.arrow:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  cursor: default;
 }
 
-.arrow.next {
-  right: -30px;
+/* Эффект при наведении на кубик */
+.project-tech span:hover {
+  background-color: #ffffff;
+  color: #1a1a1a; /* Текст становится черным на белом фоне */
+  border-color: #ffffff;
+  transform: translateY(-2px); /* Легкий прыжок вверх */
 }
-
-.arrow.prev {
-  left: -30px;
-}
-.slick-slide {
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  opacity: 1;
-  transform: scale(0.8);
-  filter: blur(2px);
-  pointer-events: none;
-  z-index: 1;
-  /* padding: 0 12px; */
-  overflow: visible;
-}
-
-.slick-center {
-  opacity: 1 !important;
-  transform: scale(1) !important;
-  filter: none !important;
-  pointer-events: auto;
-  z-index: 2;
-  padding: 0px;
-}
-.slick-center .project-card {
-  box-shadow: 0 0 20px oklch(84.42% 0.19 202.24);
-}
-.slick-track {
-  display: flex;
-  align-items: stretch;
-  overflow: visible;
-  /* transform: translateX(-15px) !important; */
-}
-.slick-list {
-  /* height: 650px; */
-  /* overflow: visible !important; */
-  padding: 35px 0 35px 10px !important;
-  /* margin-left: -10px; */
-}
-.slider-wrapper {
-  position: relative;
-  padding-bottom: 40px; /* место для точек */
-}
-.slick-dots {
-  position: absolute;
-  bottom: -30px;
-  display: flex !important;
-  justify-content: center;
-  width: 100%;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  gap: 8px;
-}
-.slick-dots li button:before {
-  content: "";
-  display: block;
-  width: 10px;
-  height: 10px;
-  background-color: #888;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-}
-
-.slick-dots li.slick-active button:before {
-  background-color: oklch(84.42% 0.19 202.24);
-}
-.icon-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 12px;
-  color: white;
-  justify-content: left;
-  flex-wrap: wrap;
-}
-.visit-label {
-  font-weight: 600;
-  font-size: 1.2rem;
-  padding-top: 10px;
-  padding-left: 20px;
-}
-
-.visit-label p {
-  color: oklch(84.42% 0.19 202.24);
-}
-
-.icon-links {
-  display: flex;
-  gap: 16px;
-  padding-top: 15px;
-}
-
-.icon-links a {
-  display: inline-block;
-}
-.icon {
-  color: white;
-  width: 50px;
-  height: 50px;
-  transition: filter 0.3s ease;
-  filter: grayscale(100%) brightness(0.9);
-}
-.icon-sun {
-  color: white;
-  width: 20px;
-  height: 20px;
-  transition: filter 0.3s ease;
-  filter: grayscale(100%) brightness(0.9);
-}
-.icon-moon {
-  color: white;
-  width: 20px;
-  height: 20px;
-  transition: filter 0.3s ease;
-  filter: grayscale(100%) brightness(0.9);
-}
-
-.icon:hover {
-  filter: none;
-  filter: drop-shadow(0 0 5px oklch(84.42% 0.19 202.24));
-}
-
-.animated-title {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: oklch(84.42% 0.19 202.24); /* твой синий */
-  margin-bottom: 40px;
-  justify-content: center;
-}
-
-.letter {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideUpFade 0.8s ease-out forwards;
-}
-/* .project-preview {
-  width: 100%;
-  height: 250px;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid #ccc;
-}
-
-.project-frame {
-  position: relative;
-}
-
-.project-frame .frame-buttons {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 10;
-  display: flex;
-  gap: 5px;
-}
-
-.project-frame .red,
-.project-frame .yellow,
-.project-frame .green {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.project-frame .red {
-  background-color: #ff5f56;
-}
-
-.project-frame .yellow {
-  background-color: #ffbd2e;
-}
-
-.project-frame .green {
-  background-color: #27c93f;
-} */
-
-@keyframes slideUpFade {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* Мобильная версия */
+@media (max-width: 800px) {
+  .projects-list {
+    grid-template-columns: 1fr;
+    gap: 50px;
   }
-}
-@media (max-width: 768px) {
-  .slick-prev,
-  .slick-next {
-    display: none !important;
-  }
-
-  .project-card {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 16px;
-    padding: 10px;
-    box-shadow: 50px rgba(0, 0, 0, 0.5);
-  }
-
-  .projects-section {
-    padding: 20px;
-    margin: 0 auto;
-  }
-  .projects-carousel-container {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
+  .projects-title {
+    font-size: 2.2rem;
+    letter-spacing: -1px;
   }
 }

@@ -1,68 +1,75 @@
 import React, { useState } from "react";
-import ThemeToggle from "./ThemeToggle";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-scroll"; // Импортируем Link для скролла
 import "./Navbar.css";
-import DownloadResumeButton from "./DownloadResumeButton";
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav>
-      <div className="navbar">
-        <div className="navbar-left">
-          <NavLink to="/" className="logo">
-            {"{maria-fomin}"}
-          </NavLink>
-        </div>
-
-        <button
-          className="burger"
-          onClick={() => setMenuOpen((prev) => !prev)}
-          aria-label="Menu"
+    <nav className="navbar-container">
+      <div className="navbar-left">
+        <Link
+          to="home"
+          smooth={true}
+          duration={500}
+          className="logo-minimal"
+          style={{ cursor: "pointer" }}
         >
-          <span className={menuOpen ? "line open" : "line"}></span>
-          <span className={menuOpen ? "line open" : "line"}></span>
-          <span className={menuOpen ? "line open" : "line"}></span>
-        </button>
+          Maria Fomin
+        </Link>
+      </div>
 
-        <div className={`navbar-center ${menuOpen ? "open" : ""}`}>
-          <NavLink
-            to="/"
-            onClick={() => setMenuOpen(false)}
-            className={({ isActive }) =>
-              isActive ? "nav-link active-link" : "nav-link"
-            }
-          >
-            About Me
-          </NavLink>
-          <NavLink
-            to="/projects"
-            onClick={() => setMenuOpen(false)}
-            className={({ isActive }) =>
-              isActive ? "nav-link active-link" : "nav-link"
-            }
-          >
-            Projects
-          </NavLink>
-          <NavLink
-            to="/contact"
-            onClick={() => setMenuOpen(false)}
-            className={({ isActive }) =>
-              isActive ? "nav-link active-link" : "nav-link"
-            }
-          >
-            Contact
-          </NavLink>
-        </div>
+      <div className={`navbar-links ${menuOpen ? "open" : ""}`}>
+        {/* smooth={true} включает плавность, duration={500} - скорость в мс */}
+        <Link
+          to="home"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          style={{ cursor: "pointer" }}
+          onClick={() => setMenuOpen(false)}
+        >
+          Home
+        </Link>
+        <Link
+          to="projects"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          style={{ cursor: "pointer" }}
+          onClick={() => setMenuOpen(false)}
+        >
+          Projects
+        </Link>
+        <Link
+          to="about"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          style={{ cursor: "pointer" }}
+          onClick={() => setMenuOpen(false)}
+        >
+          About Me
+        </Link>
+        <Link
+          to="contact"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          style={{ cursor: "pointer" }}
+          onClick={() => setMenuOpen(false)}
+        >
+          Contact
+        </Link>
+      </div>
 
-        <div className="navbar-right">
-          {/* <button className="hire">Hire Me ➤</button> */}
-          <DownloadResumeButton />
-        </div>
-        <div className="">
-          <ThemeToggle />
-        </div>
+      <div className="navbar-burger" onClick={() => setMenuOpen(!menuOpen)}>
+        <div className="burger-line"></div>
+        <div className="burger-line"></div>
       </div>
     </nav>
   );

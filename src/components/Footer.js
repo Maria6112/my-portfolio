@@ -1,10 +1,16 @@
 import "./Footer.css";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaHeart } from "react-icons/fa";
 
 const Footer = () => (
   <footer className="footer">
     <div className="footer-left">
-      <p>© {new Date().getFullYear()} Maria Fomin. Built with ❤️ and React.</p>
+      <p>
+        © {new Date().getFullYear()} Maria Fomin. Built with{" "}
+        <span>
+          <FaHeart color="#888" />
+        </span>{" "}
+        and React.
+      </p>
     </div>
     <div className="footer-right">
       <div></div>

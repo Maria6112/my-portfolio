@@ -1,32 +1,33 @@
-import "./App.css";
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Home from "./pages/Home";
 import Projects from "./pages/Projects";
-import ContactPage from "./pages/ContactPage";
-import AboutMe from "./pages/AboutMe";
-import ContactButtons from "./components/ContactButtons";
-// import PageWrapper from "./components/PageWrapper";
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
+import "./App.css";
 
 function App() {
   return (
-    <Router>
-      {/* <PageWrapper> */}
+    <div className="App">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<AboutMe />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
-      <Footer />
-      {/* </PageWrapper> */}
-      <ContactButtons />
-    </Router>
+      {/* Каждая секция имеет свой ID для скролла */}
+      <section id="home">
+        <Home />
+      </section>
+      <section id="projects">
+        <Projects />
+      </section>
+      <section id="about">
+        <About />
+      </section>
+      <section id="contact">
+        <Contact />
+      </section>
+      <section id="footer">
+        <Footer />
+      </section>
+    </div>
   );
 }
 

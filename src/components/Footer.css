@@ -3,8 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  /* background: #0f0f0f77;
-  color: white; */
+
   flex-wrap: wrap;
 }
 
@@ -16,45 +15,17 @@
 }
 
 .icon-buttons a {
-  /* color: white; */
+  color: grey;
   margin-left: 10px;
   transition: color 0.3s ease;
 }
 
-/* .icon-buttons a:hover {
-  color: oklch(84.42% 0.19 202.24);
-} */
+.icon-buttons a:hover {
+  color: white;
+}
 
 .icon {
   font-size: 24px;
-}
-
-/* 🌙 Dark Theme */
-html.dark .footer {
-  background: #0f0f0f77;
-  color: white;
-}
-
-html.dark .icon-buttons a {
-  color: white;
-}
-
-html.dark .icon-buttons a:hover {
-  color: oklch(84.42% 0.19 202.24);
-}
-
-/* ☀️ Light Theme */
-html.light .footer {
-  background: #f1f1f1a4;
-  color: #222;
-}
-
-html.light .icon-buttons a {
-  color: #222;
-}
-
-html.light .icon-buttons a:hover {
-  color: oklch(84.42% 0.19 202.24);
 }
 
 @media (max-width: 768px) {
@@ -63,7 +34,7 @@ html.light .icon-buttons a:hover {
   }
 
   .footer-right {
-    order: 1; /* правая часть будет первой */
+    order: 1;
     margin-bottom: 10px;
     text-align: center;
   }

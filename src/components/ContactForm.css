@@ -1,222 +1,108 @@
-@import url("https://fonts.googleapis.com/css2?family=Bona+Nova+SC&family=Bellefair&family=Gruppo&family=Libertinus+Sans:ital,wght@0,400;0,700&display=swap");
-
-.contact-form {
-  background: rgba(20, 20, 20, 0.8);
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 40px 20px;
+/* Основной контейнер формы */
+.minimal-contact-wrapper {
+  max-width: 500px;
   color: white;
-  font-family: Poppins, sans-serif;
-  backdrop-filter: blur(4px);
-  border-radius: 10px;
+  font-family: "Inter", sans-serif;
 }
 
-.contact-form h2 {
-  margin-bottom: 30px;
-  font-size: 30px;
-  color: oklch(84.42% 0.19 202.24);
-  text-shadow: 1px 1px 2px black;
+.minimal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.contact-form label {
-  font-size: 0.9rem;
-  margin-top: 25px;
-  display: block;
-  color: inherit; /* тёмная = white, светлая = #111 */
-}
-
-.contact-form input,
-.contact-form textarea,
-.react-tel-input .form-control {
+.input-group {
+  position: relative;
   width: 100%;
-  padding: 10px 0;
-  background: transparent;
+}
+
+/* Стили полей ввода */
+.minimal-form input,
+.minimal-form textarea {
+  width: 100%;
+  background: transparent !important; /* Прозрачный фон */
   border: none;
-  border-bottom: 1px solid currentColor;
-  color: inherit;
-  font-size: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 15px 0;
+  color: white;
+  font-size: 1.2rem;
   outline: none;
-  transition: border-color 0.3s ease;
-  box-shadow: none !important;
-  border-radius: 0 !important;
+  transition: all 0.4s ease;
+  border-radius: 0;
 }
 
-.contact-form input::placeholder,
-.contact-form textarea::placeholder,
-.react-tel-input .form-control::placeholder {
-  color: #777;
-  font-family: "Bellefair", serif;
-  font-size: 18px;
+/* Линия при фокусе */
+.minimal-form input:focus,
+.minimal-form textarea:focus {
+  border-bottom: 1px solid white;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus,
-.react-tel-input .form-control:focus {
-  border-bottom: 1px solid oklch(84.42% 0.19 202.24);
+/* Цвет подсказок (placeholder) */
+.minimal-form input::placeholder,
+.minimal-form textarea::placeholder {
+  color: #555;
+  font-weight: 300;
 }
 
-.contact-form input:-webkit-autofill,
-.contact-form textarea:-webkit-autofill {
-  box-shadow: 0 0 0px 1000px transparent inset !important;
+/* --- ИСПРАВЛЕНИЕ БЕЛОГО ФОНА ПРИ АВТОЗАПОЛНЕНИИ --- */
+.minimal-form input:-webkit-autofill,
+.minimal-form input:-webkit-autofill:hover,
+.minimal-form input:-webkit-autofill:focus,
+.minimal-form textarea:-webkit-autofill,
+.minimal-form textarea:-webkit-autofill:hover,
+.minimal-form textarea:-webkit-autofill:focus {
+  /* Заменяем белый фон на цвет твоего сайта (#1a1a1a) */
+  -webkit-box-shadow: 0 0 0px 1000px #1a1a1a inset !important;
   -webkit-text-fill-color: white !important;
   transition: background-color 5000s ease-in-out 0s;
 }
 
-.contact-form textarea {
-  resize: none;
-}
-
-.contact-form button {
-  font-family: "Poppins", sans-serif;
-  margin-top: 30px;
-  padding: 12px 24px;
-  font-size: 1rem;
-  color: black;
-  background: oklch(84.42% 0.19 202.24);
+/* Кнопка-ссылка со стрелкой */
+.submit-minimal {
+  background: transparent;
   border: none;
-  border-radius: 0 0 20px 0;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.contact-form button:hover {
-  background: oklch(84.42% 0.19 202.24 / 0.8);
-}
-
-.form-status {
-  margin-top: 20px;
-  font-size: 0.9rem;
-  color: oklch(84.42% 0.19 202.24);
-  text-align: center;
-  animation: fadeIn 0.3s ease-in;
-}
-
-/* Заголовок-анимация */
-.animated-title {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: oklch(84.42% 0.19 202.24);
-  margin-bottom: 40px;
-}
-
-.letter span {
-  font-weight: bold;
-  font-size: 1.8rem;
-  position: relative;
-  display: inline-block;
-  background-image: linear-gradient(
-    to right,
-    oklch(84.42% 0.19 202.24),
-    white,
-    oklch(84.42% 0.19 202.24)
-  );
-  background-size: 200% auto;
-  background-position: left center;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  transition: background-position 0.6s ease;
-}
-
-/* Телефонное поле */
-.react-tel-input {
-  width: 100%;
-  font-family: Poppins, sans-serif;
-}
-
-.react-tel-input .flag-dropdown,
-.react-tel-input .selected-flag {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-.react-tel-input .selected-flag .arrow {
-  display: none !important;
-}
-
-.react-tel-input .country-list {
-  background: rgba(20, 20, 20, 0.95);
-  border: 1px solid oklch(84.42% 0.19 202.24);
   color: white;
-  font-size: 0.9rem;
-}
-
-.react-tel-input .country-list .country {
-  padding: 8px 12px;
-}
-
-.react-tel-input .country-list .country:hover {
-  background: oklch(84.42% 0.19 202.24 / 0.3);
-}
-
-/* Светлая тема */
-:root.light .contact-form {
-  background: rgba(255, 255, 255, 0.85);
-  color: #111;
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
-}
-/* Сам input */
-.react-tel-input .form-control {
-  width: 100% !important;
-  padding: 10px 0 10px 70px !important; /* увеличили отступ слева */
-  background: transparent !important;
-  border: none !important;
-  border-bottom: 1px solid currentColor !important;
-  color: inherit !important;
   font-size: 1rem;
-  outline: none;
-  box-shadow: none !important;
-  transition: border-color 0.3s ease;
-  border-radius: 0 !important;
-  line-height: 1.5; /* для вертикального выравнивания */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0;
+  margin-top: 20px;
+  width: fit-content;
+  transition: opacity 0.3s ease;
 }
 
-/* Флаг (список стран) */
-.react-tel-input .selected-flag {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  height: 100%;
+.submit-minimal span {
+  transition: transform 0.3s ease;
 }
 
-/* Для стрелки флага убрали */
-.react-tel-input .selected-flag .arrow {
-  display: none !important;
-}
-:root.light .contact-form input:-webkit-autofill,
-:root.light .contact-form textarea:-webkit-autofill {
-  -webkit-text-fill-color: #111 !important;
+.submit-minimal:hover {
+  opacity: 0.7;
 }
 
-:root.light .react-tel-input .form-control {
-  color: #111 !important;
+.submit-minimal:hover span {
+  transform: translateX(10px); /* Анимация стрелки */
 }
 
-:root.light .react-tel-input .country-list {
-  background: rgba(255, 255, 255, 0.95);
-  color: #111;
+/* Состояние заблокированной кнопки (когда идет отправка) */
+.submit-minimal:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
-/* Адаптив */
-@media screen and (max-width: 600px) {
-  .contact-form {
-    margin: 20px 10px;
-    padding: 30px 15px;
-  }
+/* Текст статуса отправки */
+.status-msg {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 10px;
+  text-transform: none;
+}
 
-  .animated-title {
-    font-size: 2rem;
-  }
-
-  .letter span {
-    font-size: 1.4rem;
-  }
-
-  .contact-form button {
-    width: 100%;
-  }
+/* Убираем стандартное изменение размера textarea */
+.minimal-form textarea {
+  resize: none;
 }
