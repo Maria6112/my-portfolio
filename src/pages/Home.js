@@ -27,9 +27,10 @@ const Home = () => {
           </div>
 
           <p className="hero-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud.
+            Frontend Developer dedicated to building functional and
+            high-performance web products. I prioritize clean architecture and
+            seamless user experiences, ensuring that every project is
+            technically sound and reliable.
           </p>
 
           <Link

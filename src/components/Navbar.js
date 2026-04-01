@@ -67,7 +67,11 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <div className="navbar-burger" onClick={() => setMenuOpen(!menuOpen)}>
+      <div
+        className={`navbar-burger ${menuOpen ? "open" : ""}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <div className="burger-line"></div>
         <div className="burger-line"></div>
         <div className="burger-line"></div>
       </div>

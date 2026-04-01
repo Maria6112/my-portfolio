@@ -97,6 +97,7 @@
   .hero-title {
     font-size: 5rem;
   }
+
   .horizontal-line {
     left: 200px;
   }
@@ -104,23 +105,63 @@
     padding-left: 40px;
   }
 }
-
 @media (max-width: 768px) {
   .home-container {
-    flex-direction: column;
-    overflow-y: auto;
+    flex-direction: column !important;
+    height: auto !important; /* Убираем 100vh, если оно было */
+    min-height: 100vh;
+    overflow-y: visible !important;
+    display: block !important; /* На мобилках лучше обычный блочный поток */
   }
+
   .home-image-section {
-    height: 50vh;
+    flex: none !important; /* Отключаем растягивание flex */
+    height: 65vh !important; /* ФОТО ТЕПЕРЬ ЗАНИМАЕТ 45% ВЫСОТЫ ЭКРАНА */
+    width: 100% !important;
+    order: 1; /* Фото будет первым сверху */
   }
+
+  .hero-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: top !important;
+  }
+
   .home-text-section {
-    height: 50vh;
-    padding: 40px;
+    flex: none !important;
+    height: auto !important;
+    padding: 30px 20px 80px 20px !important; /* Увеличили отступ СНИЗУ (80px), чтобы кнопка не прилипала к краю */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left;
+    background-color: #1a1a1a;
+  }
+  .content-wrapper {
+    max-width: 100% !important;
+    width: 100%;
   }
   .hero-title {
-    font-size: 4rem;
+    font-size: 3rem !important; /* Уменьшаем шрифт, чтобы не вылезал */
+    line-height: 1.1 !important;
+    letter-spacing: -2px !important;
   }
-  .horizontal-line {
-    display: none;
+
+  .hero-description {
+    font-size: 1rem !important;
+    margin-bottom: 25px !important;
+  }
+  .hero-description {
+    display: block !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 30px !important;
+    color: #ccc !important;
+  }
+
+  .explore-btn {
+    display: inline-block !important;
+    padding: 15px 30px !important;
+    width: fit-content;
   }
 }
